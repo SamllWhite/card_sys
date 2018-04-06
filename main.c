@@ -204,7 +204,10 @@ struct card * createCardList (void){
     for(int i = 0;i < 90;i++){
         p = (struct card* )malloc(sizeof(struct card));
         p -> listHead = (struct record* )malloc(sizeof(struct card));
-        if(i < 30)p -> number = 1001 + i;//st
+        if(i < 30){
+            p -> number = 1001 + i;//st
+            p -> wash_ticket = 100;
+        }
         else if((30 <= i) && (i < 60))p -> number = 1071 + i;//te
         else p -> number = 1141 + i;//zg
         p -> balance.yuan = cardHead -> balance.jiao = cardHead -> balance.fen = 0;
